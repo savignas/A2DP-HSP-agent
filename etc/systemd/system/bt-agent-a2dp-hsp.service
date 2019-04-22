@@ -1,0 +1,14 @@
+[Unit]
+Description=A2DP/HSP Bluetooth Agent
+After=bluetooth.service pulseaudio.service ofono.service
+Wants=bluetooth.service pulseaudio.service ofono.service
+
+[Service]
+ExecStart=/usr/bin/python -u /usr/local/bin/a2dp-hsp-agent.py
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=A2DP-HSP-Agent
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

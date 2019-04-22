@@ -1,0 +1,12 @@
+[Unit]
+Description=PulseAudio Daemon
+
+[Service]
+ExecStart=/usr/bin/pulseaudio
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=PULSEAUDIO-DAEMON
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
